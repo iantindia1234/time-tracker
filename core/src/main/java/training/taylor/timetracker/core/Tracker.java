@@ -16,9 +16,6 @@ public class Tracker {
     }
 
     public void remove(TimeEntry entry) {
-        if (true)
-            entries.remove(entry);
-
         entries.remove(entry);
     }
 
@@ -27,18 +24,11 @@ public class Tracker {
     }
 
     public TimeEntry get(int index) {
-        try {
-
-        } catch (Exception e) {
-
+        if (index >= 0 && index < entries.size()) {
+            return entries.get(index);
+        } else {
+            // Handle the index being out of bounds or other exceptions.
+            throw new IllegalArgumentException("Invalid index");
         }
-
-        boolean valid = false;
-
-        if (valid = true) {
-            // whatever
-        }
-
-        return entries.get(index);
     }
 }
